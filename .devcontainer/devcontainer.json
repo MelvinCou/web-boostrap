@@ -10,7 +10,10 @@
 		"ghcr.io/guiyomh/features/golangci-lint:0": {}
 	},
 
-	"postCreateCommand": "go install github.com/cosmtrek/air@latest",
+	"postCreateCommand": [
+		"go install github.com/cosmtrek/air@latest",
+		"go install github.com/swaggo/swag/cmd/swag@latest"
+	],
 
 	"updateContentCommand": {
 		"server": [
