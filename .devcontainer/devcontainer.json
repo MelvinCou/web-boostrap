@@ -8,6 +8,22 @@
 		"ghcr.io/devcontainers/features/go:1": {},
 		"ghcr.io/devcontainers/features/node:1": {},
 		"ghcr.io/guiyomh/features/golangci-lint:0": {}
+	},
+
+	"postCreateCommand": "go install github.com/cosmtrek/air@latest",
+
+	"updateContentCommand": {
+		"server": [
+			"cd server",
+			"go build"
+		]
+	},
+
+	"postAttachCommand": {
+		"server": [
+			"cd server",
+			"air"
+		]
 	}
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
