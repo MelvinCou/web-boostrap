@@ -10,30 +10,25 @@
 		"ghcr.io/guiyomh/features/golangci-lint:0": {}
 	},
 
-	"postCreateCommand": [
-		"go install github.com/cosmtrek/air@latest",
-		"go install github.com/swaggo/swag/cmd/swag@latest"
-	],
+	"postCreateCommand": {
+		"server": "go install github.com/cosmtrek/air@latest && go install github.com/swaggo/swag/cmd/swag@v1.8.11"
+	},
 
 	"updateContentCommand": {
-		"server": [
-			"cd server",
-			"go build"
-		]
+		"server": "cd server && go build"
 	},
 
 	"postAttachCommand": {
-		"server": [
-			"cd server",
-			"air"
-		]
-	}
+		"server": "cd sierver && ar"
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+		8080
+	]
 
 	// Configure tool-specific properties.
 	// "customizations": {},

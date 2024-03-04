@@ -131,7 +131,17 @@ const docTemplate = `{
     },
     "definitions": {
         "main.Account": {
-            "type": "object"
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "example": 1
+                },
+                "name": {
+                    "type": "string",
+                    "example": "account name"
+                }
+            }
         }
     },
     "securityDefinitions": {

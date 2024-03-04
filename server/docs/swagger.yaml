@@ -1,6 +1,13 @@
 basePath: /api/v1
 definitions:
   main.Account:
+    properties:
+      id:
+        example: 1
+        type: integer
+      name:
+        example: account name
+        type: string
     type: object
 externalDocs:
   description: OpenAPI

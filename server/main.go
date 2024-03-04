@@ -87,4 +87,6 @@ func ListAccounts(ctx *gin.Context) {
 }
 
 type Account struct {
+	ID   int    `json:"id" example:"1"`
+	Name string `json:"name" example:"account name"`
 }
