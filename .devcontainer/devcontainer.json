@@ -19,7 +19,7 @@
 	},
 
 	"postAttachCommand": {
-		"server": "cd sierver && ar"
+		"server": "cd server && ar"
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.

@@ -1,0 +1,40 @@
+name: server
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+#    paths:
+#      - 'server/**'
+
+permissions:
+  contents: read
+
+jobs:
+  server:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+      - name: Run Golang CI
+        uses: golangci/golangci-lint-action@v4
+        with:
+          version: v1.56
+          working-directory: server
+      - name: Format code
+        run: |
+          go install github.com/swaggo/swag/cmd/swag@v1.8.11
+          go fmt
+          swag fmt
+          git diff --exit-code
+      - name: Build server
+        run: |
+          swag init
+          go build
+      - name: Run unit tests
+        run: go test
