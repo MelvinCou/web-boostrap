@@ -1,0 +1,12 @@
+.vscode/
+cypress/
+node_modules/
+
+.dockerignore
+.eslintrc.cjs
+.gitignore
+.eslintrc.cjs
+
+postcss.config.js
+Dockerfile
+README.md
